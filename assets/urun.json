@@ -1,0 +1,92 @@
+[
+    {
+        "urunId": 1,
+        "kategori":"Meyve",
+        "urunAd":"Limon",
+        "maksCartWeight":10,
+        "defCartWeight":0.5,
+        "urunAciklama":"Türk damak tadının vazgeçilmezlerinden biri olan Limon yüksek Omega 3, lif, potasyum, fosfor ve magnezyum kaynağı olmasıyla yorgunluk bitkinliğin azalmasında ve kemik ve kas yapısında oldukça fayda sağlar.",
+        "mensei":"Yerli",
+        "kaynak":"Türkiye"
+    },
+    {
+        "urunId": 2,
+        "kategori":"Meyve",
+        "urunAd":"Ananas",
+        "maksCartWeight":10,
+        "defCartWeight":1,
+        "urunAciklama":"Ananas içerisindeki antioksidanlar sayesinde toksinlerin atılmasına ve zinde hissetmenize yardımcı olur.",
+        "mensei":"İthal",
+        "kaynak":"Kosta Rika"
+    },
+    {
+        "urunId": 3,
+        "kategori":"Meyve",
+        "urunAd":"Çilek",
+        "maksCartWeight":5,
+        "defCartWeight":0.5,
+        "urunAciklama":"Çilek, hoş kokusu ve parlak rengiyle bahar ve yaz aylarının vazgeçilmez meyvelerinin başında gelir. Taze çileklerle isterseniz tatlılarınızı süsleyebilir isterseniz de tek başına tüketerek tadına varabilirsiniz.",
+        "mensei":"Yerli",
+        "kaynak":"Türkiye"
+    },
+    {
+        "urunId": 4,
+        "kategori":"Meyve",
+        "urunAd":"Elma",
+        "maksCartWeight":10,
+        "defCartWeight":1,
+        "urunAciklama":"Elma, orta boylu, pembe kabuklu bir elma türüdür. Kendine has aroması ile öğün aralarınıza dahil edebileceğiniz bir lezzettir.",
+        "mensei":"Yerli",
+        "kaynak":"Türkiye"
+    },
+    {
+        "urunId": 5,
+        "kategori":"Meyve",
+        "urunAd":"Greyfurt",
+        "maksCartWeight":10,
+        "defCartWeight":1,
+        "urunAciklama":"Kabuğundan meyvesine kadar birçok farklı şekilde tüketilebilen Greyfurt, taze olarak tüketicilerinin beğenisine sunuluyor.",
+        "mensei":"İthal",
+        "kaynak":"Çin"
+    },
+    {
+        "urunId": 6,
+        "kategori":"Meyve",
+        "urunAd":"Karpuz",
+        "maksCartWeight":10,
+        "defCartWeight":1,
+        "urunAciklama":"Vücudun nem dengesini korumaya yardımcı olan karpuz kendinizi zinde hissetmenize yardımcı olur.",
+        "mensei":"Yerli",
+        "kaynak":"Türkiye"
+    },
+    {
+        "urunId": 7,
+        "kategori":"Meyve",
+        "urunAd":"Kavun",
+        "maksCartWeight":10,
+        "defCartWeight":1,
+        "urunAciklama":"Kavun (Cucumis melo), kabakgillerden sürüngen gövdeli bitki türü ve bu bitkinin iri meyvesidir. Olgunlaşmamış hali de meyve olarak tüketilir ve bu haldeki meyvesine kelek denir. Bir yıllık otsu bir bitkidir.",
+        "mensei":"Yerli",
+        "kaynak":"Türkiye"
+    },
+    {
+        "urunId": 8,
+        "kategori":"Meyve",
+        "urunAd":"Muz",
+        "maksCartWeight":10,
+        "defCartWeight":0.5,
+        "urunAciklama":"Mineral, vitamin ve protein bakımından oldukça zengin bir besin olan muz ithal, önemli bir besin kaynağı olarak öne çıkıyor. Sevilen tadı ve farklı kokusuyla keyifle yenebilen ithal muz, en taze şekliyle hazırlanıp tüketicinin beğenisine sunuluyor.",
+        "mensei":"İthal",
+        "kaynak":"Ekvator"
+    },
+    {
+        "urunId": 9,
+        "kategori":"Meyve",
+        "urunAd":"Şeftali",
+        "maksCartWeight":10,
+        "defCartWeight":0.5,
+        "urunAciklama":"Meyve tabaklarına renk ve lezzet katan şeftali, tatlı lezzeti ile canınız tatlı çektiği zamanlar için birebir.",
+        "mensei":"Yerli",
+        "kaynak":"Türkiye"
+    }
+]

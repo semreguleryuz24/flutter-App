@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "758761226788",
+    "firebase_url": "https://makbulfirebase-default-rtdb.firebaseio.com",
+    "project_id": "makbulfirebase",
+    "storage_bucket": "makbulfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758761226788:android:787c9f2fbd928d1cb18eb1",
+        "android_client_info": {
+          "package_name": "com.example.flutter_makbul1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758761226788-7i1v1aqdt2637s3ub8epeqmc0ce0p189.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2kQaKB5nBDJoegPlC80xqKc1O1lnx0sA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758761226788-7i1v1aqdt2637s3ub8epeqmc0ce0p189.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

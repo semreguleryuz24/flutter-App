@@ -24,8 +24,7 @@ class _Anasayfa extends State<Anasayfa> {
   Future<List<Kategori>> kategoriListele() async {
     List<Kategori> kategoris = [];
 
-    Uri url = Uri.parse(
-        'https://makbulfirebase-default-rtdb.firebaseio.com/kategori.json');
+    Uri url = Uri.parse('https://makbulfirebase-default-rtdb.firebaseio.com/kategori.json');
     http.Response cevap = await http.get(url);
 
     //statuscode = 200 -> başarılı
@@ -41,8 +40,7 @@ class _Anasayfa extends State<Anasayfa> {
       }
     } else {
       debugPrint("Error: ${cevap.statusCode}");
-      throw Exception(
-          "Veriler getirilirken hata oluştu. \n Hata kodu: ${cevap.statusCode}");
+      throw Exception("Veriler getirilirken hata oluştu. \n Hata kodu: ${cevap.statusCode}");
     }
     //debugPrint("${uruns[0].urunId} / ${uruns[0].urunAd}");
 
@@ -89,8 +87,7 @@ class _Anasayfa extends State<Anasayfa> {
               ],
             ),
             FutureBuilder(
-              builder:
-                  (_buildcontext, AsyncSnapshot<List<Kategori>> asyncSnapshot) {
+              builder: (_buildcontext, AsyncSnapshot<List<Kategori>> asyncSnapshot) {
                 if (asyncSnapshot.hasData) {
                   List<Kategori>? kategoriss = asyncSnapshot.data;
                   if (kategoriss == null) {
@@ -99,9 +96,7 @@ class _Anasayfa extends State<Anasayfa> {
                   return Column(
                     children: <Widget>[
                       //her satırda 3 kategori
-                      for (int satir = 0;
-                          satir < (kategoriss.length / 3).ceil();
-                          satir++)
+                      for (int satir = 0; satir < (kategoriss.length / 3).ceil(); satir++)
                         Row(
                           children: <Widget>[
                             for (int sira = 0; sira < 3; sira++)
@@ -113,15 +108,13 @@ class _Anasayfa extends State<Anasayfa> {
                                     kategoriss.length,
                                     katAdlar,
                                     kategoriss[(satir * 3) + sira].subKatg,
-                                    kategoriss[(satir * 3) + sira]
-                                        .subKatSayisi),
+                                    kategoriss[(satir * 3) + sira].subKatSayisi),
                           ],
                         ),
                     ],
                   );
                 } else {
-                  debugPrint(
-                      "Kategoriler getirelemedi;Sebep: + ${asyncSnapshot.data}");
+                  debugPrint("Kategoriler getirelemedi;Sebep: + ${asyncSnapshot.data}");
                   return Center(
                     heightFactor: 11.0,
                     //Bekleme işareti spinner

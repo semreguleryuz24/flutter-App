@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'kategori/productsPage.dart';
+import 'kategori/urunsayfa.dart';
 
 class CardKat extends StatelessWidget {
-  String imageUrl = "";
-  String title = "";
-  int categoryId = 0;
+  String resim = "";
+  String baslik = "";
+  int kategoriId = 0;
   int katLength = 0;
   int subKATid = 0;
   int subKATSay = 0;
   List<String> katAdlar = [];
 
   //Constructor
-  CardKat(this.imageUrl, this.title, this.categoryId, this.katLength, this.katAdlar, this.subKATid, this.subKATSay);
+  CardKat(this.resim, this.baslik, this.kategoriId, this.katLength,
+      this.katAdlar, this.subKATid, this.subKATSay);
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +22,14 @@ class CardKat extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ProductsPage(
-                katAd: title,
-                katId: categoryId,
+            builder: (context) => UrunSayfa(
+                katAd: baslik,
+                katId: kategoriId,
                 katL: katLength,
                 katAds: katAdlar,
                 subkatId: subKATid,
-                subkatSAYI: subKATSay), //.. veri gönderiyoruz. Kategori Adını gönderiyoruz..
+                subkatSAYI:
+                    subKATSay), //.. veri gönderiyoruz. Kategori Adını gönderiyoruz..
           ),
         );
       },
@@ -39,10 +41,10 @@ class CardKat extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Image(
-                image: AssetImage("assets/Kategori/$imageUrl"),
+                image: AssetImage("assets/Kategori/$resim"),
               ),
               Text(
-                title,
+                baslik,
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),

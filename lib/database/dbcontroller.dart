@@ -38,6 +38,10 @@ class DbController {
         await openDatabase(dbPath, version: 1, onCreate: _firstOpen);
     //debugPrint("Veritabanı oluşturuldu");
     return dbLocalCart;
+
+
+
+    
   }
 
   //oncreate teki ilk açılış metodu. İlk açılışta tablolar oluşturduk.

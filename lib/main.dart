@@ -1,5 +1,29 @@
+/*
 import 'package:flutter/material.dart';
-import 'package:flutter_makbul1/splashScreen.dart';
+import 'anasayfa.dart';
+import 'package:flutter_makbul1/kategori/urunsayfa.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        "/": (context) => Anasayfa(),
+        "./kategori/urunsayfa": (context) => UrunSayfa(
+              katId: 0,
+              katAd: '',
+              katL: 0,
+              katAds: [],
+            ),
+      },
+    ),
+  );
+}
+*/
+
+import 'package:flutter/material.dart';
+import 'ilksayfa.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -18,7 +42,8 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 2), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => SplashScreen()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => IlkSayfa()));
     });
   }
 
@@ -26,7 +51,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/splash.png"), fit: BoxFit.cover)),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/splash.png"), fit: BoxFit.cover)),
       ),
     );
   }

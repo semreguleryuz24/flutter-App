@@ -26,7 +26,9 @@ class _Anasayfa extends State<Anasayfa> {
   //List<String> cartItems = [];
   List<DbCart> cartItemList = [];
   //int urunMiktar = 0;
-  double toplamTutar = 0;
+  double toplamTutar = 0; 
+
+  
   //final Future<SharedPreferences> _sharedP = SharedPreferences.getInstance();
 
 /*

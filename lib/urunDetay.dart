@@ -1,3 +1,4 @@
+//23.05.2022 - yorum - github
 import 'package:flutter/material.dart';
 
 //Program tanimlama

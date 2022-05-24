@@ -107,9 +107,9 @@ class _Anasayfa extends State<Anasayfa> {
         return AlertDialog(
           titlePadding: const EdgeInsets.all(0),
           title: Container(
-            padding: EdgeInsets.all(9.0),
+            padding:const EdgeInsets.all(9.0),
             color: Colors.red,
-            child: Text(
+            child:const Text(
               "Sepettekilerim",
               style: TextStyle(
                 color: Colors.white,
@@ -127,7 +127,7 @@ class _Anasayfa extends State<Anasayfa> {
                         children: <Widget>[
                           Text(
                             "${cartItemList[i].prodName}",
-                            style: TextStyle(
+                            style:const TextStyle(
                               //color: Color.fromRGBO(103, 148, 105, 1.0),
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -149,7 +149,7 @@ class _Anasayfa extends State<Anasayfa> {
                           */
                         ],
                       ),
-                    Divider(),
+                  const  Divider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
@@ -177,7 +177,7 @@ class _Anasayfa extends State<Anasayfa> {
                 //Devam işlemler -> checkout
                 Navigator.pop(context);
               },
-              child: Text('AlışVerişe Devam'),
+              child:const Text('AlışVerişe Devam'),
             ),
             ElevatedButton(
               style: ButtonStyle(

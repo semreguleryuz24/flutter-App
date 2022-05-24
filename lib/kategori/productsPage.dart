@@ -15,7 +15,6 @@ import 'urun.dart';
 import 'dart:async'; //future
 import 'package:http/http.dart' as http; //response
 import 'package:fluttertoast/fluttertoast.dart';
-
 import 'package:badges/badges.dart'; // bottomnavigation daki badge küçük bildirimler için
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 
@@ -50,11 +49,7 @@ class _ProductsPage extends State<ProductsPage> with SingleTickerProviderStateMi
 
   List<String> categories = [];
   List<int> categoryIds = [];
-  List<double> maxCartWeight = [];
-
-  /**
-  *  Holds subcategory names as a String List.
-  */
+  List<double> maxCartWeight = []; 
   List<String> subCategoryNames = [];
 
   List<int> subCategoryIds = [];

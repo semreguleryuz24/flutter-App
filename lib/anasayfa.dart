@@ -1,3 +1,4 @@
+//yorum 23.05.2022 github
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart'; //slider banner için
 import 'package:flutter_makbul1/cardKategori.dart'; //card düzeni tek sayfadan düzenlenebilsin
@@ -26,7 +27,9 @@ class _Anasayfa extends State<Anasayfa> {
   //List<String> cartItems = [];
   List<DbCart> cartItemList = [];
   //int urunMiktar = 0;
-  double toplamTutar = 0;
+  double toplamTutar = 0; 
+
+  
   //final Future<SharedPreferences> _sharedP = SharedPreferences.getInstance();
 
 /*

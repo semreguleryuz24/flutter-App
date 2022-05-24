@@ -41,7 +41,8 @@ class ProductsPage extends StatefulWidget {
 }
 
 //Ana program
-class _ProductsPage extends State<ProductsPage> with SingleTickerProviderStateMixin {
+class _ProductsPage extends State<ProductsPage>
+    with SingleTickerProviderStateMixin {
   //Degiskenler
   late Future<List<Urun>> urunFuture;
   late TabController _controller;
@@ -65,7 +66,8 @@ class _ProductsPage extends State<ProductsPage> with SingleTickerProviderStateMi
   Future<List<Urun>> urunListele() async {
     List<Urun> uruns = [];
 
-    Uri url1 = Uri.parse('https://makbulfirebase-default-rtdb.firebaseio.com/urun.json');
+    Uri url1 = Uri.parse(
+        'https://makbulfirebase-default-rtdb.firebaseio.com/urun.json');
     http.Response cevap1 = await http.get(url1);
 
     //statuscode = 200 -> başarılı
@@ -80,17 +82,20 @@ class _ProductsPage extends State<ProductsPage> with SingleTickerProviderStateMi
         //kgDegerUrun.add(urun.defCartWeight);
         maxCartWeight.add(0.0);
 
-        if (!subCategoryNames.contains(urun.subKatAd) && urun.katId == widget.katId) {
+        if (!subCategoryNames.contains(urun.subKatAd) &&
+            urun.katId == widget.katId) {
           subCategoryNames.add(urun.subKatAd);
         }
 
-        if (!subCategoryIds.contains(urun.subKatID) && urun.katId == widget.katId) {
+        if (!subCategoryIds.contains(urun.subKatID) &&
+            urun.katId == widget.katId) {
           subCategoryIds.add(urun.subKatID);
         }
       }
     } else {
       debugPrint("Error: ${cevap1.statusCode}");
-      throw Exception("Veriler getirilirken hata oluştu. \n Hata kodu: ${cevap1.statusCode}");
+      throw Exception(
+          "Veriler getirilirken hata oluştu. \n Hata kodu: ${cevap1.statusCode}");
     }
     //debugPrint("1-subkatIdLER : $subKatIDs");
     //debugPrint("1-subkatId : ${widget.subkatId}");
@@ -171,7 +176,8 @@ class _ProductsPage extends State<ProductsPage> with SingleTickerProviderStateMi
               Center(
                 child: Center(
                   child: FutureBuilder(
-                    builder: (_buildcontext, AsyncSnapshot<List<Urun>> asyncSnapshot) {
+                    builder: (_buildcontext,
+                        AsyncSnapshot<List<Urun>> asyncSnapshot) {
                       if (asyncSnapshot.hasData) {
                         List<Urun>? urunss = asyncSnapshot.data;
                         List<Urun>? urunsSub = urunss;
@@ -192,16 +198,11 @@ class _ProductsPage extends State<ProductsPage> with SingleTickerProviderStateMi
                           }
                         }
 
-
-                        
-
-
-
-
-
                         //urunss = urunss.where((x) => x.subKatID == widget.subkatId).toList();
 
-                        urunss = urunss.where((x) => x.katId == widget.katId).toList();
+                        urunss = urunss
+                            .where((x) => x.katId == widget.katId)
+                            .toList();
 
                         for (var i = 0; i < urunss.length; i++) {
                           if (!subCategoryNames.contains(urunss[i].subKatAd)) {
@@ -213,8 +214,11 @@ class _ProductsPage extends State<ProductsPage> with SingleTickerProviderStateMi
                           }
                         }
 
-                        urunsSub =
-                            urunss.where((x) => x.katId == widget.katId && x.subKatID == widget.subkatId).toList();
+                        urunsSub = urunss
+                            .where((x) =>
+                                x.katId == widget.katId &&
+                                x.subKatID == widget.subkatId)
+                            .toList();
 
                         //widget.subkatId = subKatIDs[0];
                         debugPrint("2-subkatIdLER : $subCategoryIds");
@@ -246,7 +250,9 @@ class _ProductsPage extends State<ProductsPage> with SingleTickerProviderStateMi
                                 alignment: Alignment.centerLeft,
                                 child: Row(
                                   children: <Widget>[
-                                    for (var i = 0; i < subCategoryNames.length; i++)
+                                    for (var i = 0;
+                                        i < subCategoryNames.length;
+                                        i++)
                                       if (widget.subkatId == subCategoryIds[i])
                                         GestureDetector(
                                           onTap: () {},
@@ -280,80 +286,132 @@ class _ProductsPage extends State<ProductsPage> with SingleTickerProviderStateMi
                                 childAspectRatio: 0.55,
                                 crossAxisCount: 3,
                                 children: <Widget>[
-                                  for (int sira = 0; sira < urunss.length; sira++)
+                                  for (int sira = 0;
+                                      sira < urunss.length;
+                                      sira++)
                                     Card(
                                       child: Container(
                                         //width:(MediaQuery.of(context).size.width /3.2),
                                         //height: (MediaQuery.of(context).size.height / 2),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: <Widget>[
                                             //1.satır -,kg,+ butonlar
                                             Container(
                                               child: Row(
-                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
                                                 children: <Widget>[
                                                   //- button
                                                   SizedBox(
-                                                    width: ((MediaQuery.of(context).size.width / 3) - 10) / 4,
+                                                    width:
+                                                        ((MediaQuery.of(context)
+                                                                        .size
+                                                                        .width /
+                                                                    3) -
+                                                                10) /
+                                                            4,
                                                     child: ElevatedButton(
                                                       child: const Text(
                                                         "-",
-                                                        textAlign: TextAlign.center,
+                                                        textAlign:
+                                                            TextAlign.center,
                                                       ),
                                                       onPressed: () {
                                                         //Sepetteki kaç çeşit ürün olduğunu gösteren sayıyı azalt.
-                                                        if (maxCartWeight[sira] ==
-                                                            double.parse(urunss![sira].defCartWeight)) {
+                                                        if (maxCartWeight[
+                                                                sira] ==
+                                                            double.parse(urunss![
+                                                                    sira]
+                                                                .defCartWeight)) {
                                                           setState(() {
-                                                            productAmount = productAmount - 1;
+                                                            productAmount =
+                                                                productAmount -
+                                                                    1;
                                                           });
                                                         }
                                                         //ürün kg değerini DEFAULT_CART_WEIGHT kadar azalt.
-                                                        if (maxCartWeight[sira] >=
-                                                            double.parse(urunss[sira].defCartWeight)) {
+                                                        if (maxCartWeight[
+                                                                sira] >=
+                                                            double.parse(urunss[
+                                                                    sira]
+                                                                .defCartWeight)) {
                                                           setState(() {
-                                                            maxCartWeight[sira] = maxCartWeight[sira] -
-                                                                double.parse(urunss![sira].defCartWeight);
+                                                            maxCartWeight[
+                                                                sira] = maxCartWeight[
+                                                                    sira] -
+                                                                double.parse(
+                                                                    urunss![sira]
+                                                                        .defCartWeight);
                                                           });
                                                         }
                                                       },
                                                     ),
                                                   ),
                                                   //Text Değişken / lokal değişken, kgdegerUrun de saklanıyor.
-                                                  Text("${maxCartWeight[sira]} kg"),
+                                                  Text(
+                                                      "${maxCartWeight[sira]} kg"),
                                                   //+
                                                   SizedBox(
-                                                    width: ((MediaQuery.of(context).size.width / 3) - 10) / 4,
+                                                    width:
+                                                        ((MediaQuery.of(context)
+                                                                        .size
+                                                                        .width /
+                                                                    3) -
+                                                                10) /
+                                                            4,
                                                     child: ElevatedButton(
                                                       child: const Text(
                                                         "+",
-                                                        textAlign: TextAlign.center,
+                                                        textAlign:
+                                                            TextAlign.center,
                                                       ),
                                                       //ürün MAKSIMUM_CART_WEIGHT e ulaşmadığı sürece kg ını artır.
                                                       onPressed: () {
-                                                        if (maxCartWeight[sira] <
-                                                            double.parse(urunss![sira].maksCartWeight)) {
+                                                        if (maxCartWeight[
+                                                                sira] <
+                                                            double.parse(urunss![
+                                                                    sira]
+                                                                .maksCartWeight)) {
                                                           setState(() {
-                                                            maxCartWeight[sira] = maxCartWeight[sira] +
-                                                                double.parse(urunss![sira].defCartWeight);
+                                                            maxCartWeight[
+                                                                sira] = maxCartWeight[
+                                                                    sira] +
+                                                                double.parse(
+                                                                    urunss![sira]
+                                                                        .defCartWeight);
                                                           });
                                                         } else {
                                                           //ürün MAKSIMUM_CART_WEIGHT i geçerse uyarı mesajı ver.
-                                                          Fluttertoast.showToast(
-                                                            msg: "Maksimum ürün ekleme ağırlığına ulaştınız",
-                                                            toastLength: Toast.LENGTH_LONG,
-                                                            gravity: ToastGravity.CENTER,
-                                                            backgroundColor: Colors.green.shade900,
-                                                            textColor: Colors.white,
+                                                          Fluttertoast
+                                                              .showToast(
+                                                            msg:
+                                                                "Maksimum ürün ekleme ağırlığına ulaştınız",
+                                                            toastLength: Toast
+                                                                .LENGTH_LONG,
+                                                            gravity:
+                                                                ToastGravity
+                                                                    .CENTER,
+                                                            backgroundColor:
+                                                                Colors.green
+                                                                    .shade900,
+                                                            textColor:
+                                                                Colors.white,
                                                             fontSize: 16.0,
                                                           );
                                                         }
                                                         //Sepetteki kaç çeşit ürün olduğunu gösteren sayıyı artır.
-                                                        if (maxCartWeight[sira] ==
-                                                            double.parse(urunss[sira].defCartWeight)) {
+                                                        if (maxCartWeight[
+                                                                sira] ==
+                                                            double.parse(urunss[
+                                                                    sira]
+                                                                .defCartWeight)) {
                                                           setState(() {
-                                                            productAmount = productAmount + 1;
+                                                            productAmount =
+                                                                productAmount +
+                                                                    1;
                                                           });
                                                         }
                                                       },
@@ -368,19 +426,32 @@ class _ProductsPage extends State<ProductsPage> with SingleTickerProviderStateMi
                                                 Navigator.push(
                                                   context,
                                                   MaterialPageRoute(
-                                                    builder: (context) => UrunDetay(
-                                                        //UrunDetay sayfasına veri gönderiyoruz.
-                                                        urunResim: "assets/img/${urunss![sira].urunResim}",
-                                                        urunFiyat: double.parse(urunss[sira].urunFiyat),
-                                                        urunAd: urunss[sira].urunAd,
-                                                        urunAciklama: urunss[sira].urunAciklama,
-                                                        urunMensei: urunss[sira].mensei,
-                                                        urunKaynak: urunss[sira].kaynak),
+                                                    builder: (context) =>
+                                                        UrunDetay(
+                                                            //UrunDetay sayfasına veri gönderiyoruz.
+                                                            urunResim:
+                                                                "assets/img/${urunss![sira].urunResim}",
+                                                            urunFiyat: double
+                                                                .parse(urunss[
+                                                                        sira]
+                                                                    .urunFiyat),
+                                                            urunAd: urunss[sira]
+                                                                .urunAd,
+                                                            urunAciklama:
+                                                                urunss[sira]
+                                                                    .urunAciklama,
+                                                            urunMensei:
+                                                                urunss[sira]
+                                                                    .mensei,
+                                                            urunKaynak:
+                                                                urunss[sira]
+                                                                    .kaynak),
                                                   ),
                                                 );
                                               },
                                               child: Image(
-                                                image: AssetImage("assets/img/${urunss[sira].urunResim}"),
+                                                image: AssetImage(
+                                                    "assets/img/${urunss[sira].urunResim}"),
                                                 //width: (MediaQuery.of(context).size.width / 3) - 10,
                                               ),
                                             ),
@@ -407,18 +478,21 @@ class _ProductsPage extends State<ProductsPage> with SingleTickerProviderStateMi
                           ],
                         );
                       } else {
-                        debugPrint("Ürünler getirelemedi;Sebep: + ${asyncSnapshot.data}");
+                        debugPrint(
+                            "Ürünler getirelemedi;Sebep: + ${asyncSnapshot.data}");
                         return Center(
                           //heightFactor: MediaQuery.of(context).size.height / 3,
                           heightFactor: 11.0,
                           //Bekleme işareti spinner
                           child: CircularProgressIndicator(
-                            valueColor: new AlwaysStoppedAnimation<Color>(Colors.red),
+                            valueColor:
+                                new AlwaysStoppedAnimation<Color>(Colors.red),
                           ),
                         );
                       }
                     },
-                    future: urunFuture, //her seferinde json ı serverdan çağırıp yük bindirmesin diye.
+                    future:
+                        urunFuture, //her seferinde json ı serverdan çağırıp yük bindirmesin diye.
                   ),
                 ),
               ),

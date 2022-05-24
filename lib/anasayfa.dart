@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart'; //slider banner için
 import 'package:flutter_makbul1/cardKategori.dart'; //card düzeni tek sayfadan düzenlenebilsin
+import 'package:flutter_makbul1/sepet.dart';
 import 'dart:convert'; //json decode
 import 'dart:async'; //future
 import 'package:http/http.dart' as http; //get-response
@@ -26,9 +27,8 @@ class _Anasayfa extends State<Anasayfa> {
   //List<String> cartItems = [];
   List<DbCart> cartItemList = [];
   //int urunMiktar = 0;
-  double toplamTutar = 0; 
+  double toplamTutar = 0;
 
-  
   //final Future<SharedPreferences> _sharedP = SharedPreferences.getInstance();
 
 /*
@@ -110,9 +110,9 @@ class _Anasayfa extends State<Anasayfa> {
           titlePadding: const EdgeInsets.all(0),
           title: Container(
             padding: EdgeInsets.all(9.0),
-            color: Colors.red,
+            color: Colors.green,
             child: Text(
-              "Sepettekilerim",
+              "Sepetim",
               style: TextStyle(
                 color: Colors.white,
               ),
@@ -128,10 +128,10 @@ class _Anasayfa extends State<Anasayfa> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           Text(
-                            "${cartItemList[i].prodName}",
+                            "${cartItemList[i].prodName} : ",
                             style: TextStyle(
                               //color: Color.fromRGBO(103, 148, 105, 1.0),
-                              color: Colors.black,
+                              color: Colors.amber,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -173,7 +173,8 @@ class _Anasayfa extends State<Anasayfa> {
           actions: <Widget>[
             ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.orange),
               ),
               onPressed: () {
                 //Devam işlemler -> checkout
@@ -187,7 +188,13 @@ class _Anasayfa extends State<Anasayfa> {
               ),
               onPressed: () {
                 //Devam işlemler -> checkout
-                Navigator.pop(context);
+                //Navigator.pop(context);
+                //Navigator.pushNamed(context, "/sepet");
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Sepet()),
+                );
               },
               child: Text('ÖDEME'),
             ),
@@ -324,6 +331,7 @@ class _Anasayfa extends State<Anasayfa> {
               debugPrint("Arasayfa");
               break;
             case 2:
+              //Navigator.pushNamed(context, "/sepet");
               sepetEkraniAc();
               debugPrint("Sepetim");
               break;

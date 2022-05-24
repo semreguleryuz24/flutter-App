@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_makbul1/arasayfa.dart';
+import 'package:flutter_makbul1/sepet.dart';
 import 'anasayfa.dart';
 import 'package:flutter_makbul1/kategori/urunsayfa.dart';
 /*
@@ -44,6 +45,7 @@ class _IlkSayfaState extends State<IlkSayfa> {
               subkatSAYI: 0,
             ),
         "/arasayfa": (context) => AraSayfa(),
+        "/sepet": (context) => Sepet()
       },
     );
   }

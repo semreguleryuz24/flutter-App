@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_makbul1/anasayfa.dart';
 //import 'package:flutter/services.dart'; //httpClient
 import 'package:flutter_makbul1/kategori/urun.dart';
+import 'package:flutter_makbul1/sepet.dart';
 //import 'package:sticky_headers/sticky_headers.dart'; //üstteki sabit yer -> kategoriler
 import 'dart:convert'; //json decode
 import 'urun.dart';
@@ -337,14 +338,27 @@ class _UrunSayfa extends State<UrunSayfa> with SingleTickerProviderStateMixin {
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
               ),
               onPressed: () {
-                Fluttertoast.showToast(
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Sepet(
+                      cartItemList: cartItemList,
+                    ),
+                  ),
+                );
+                /*   Fluttertoast.showToast(
                   msg: "Checkout a gider.",
                   toastLength: Toast.LENGTH_LONG,
                   gravity: ToastGravity.CENTER,
                   backgroundColor: Colors.green.shade900,
                   textColor: Colors.white,
                   fontSize: 16.0,
-                );
+                  
+                ); */
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => Sepet()),
+                // );
                 //Devam işlemler -> checkout
                 //Navigator.pop(context);
               },

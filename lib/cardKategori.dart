@@ -35,8 +35,8 @@ class CardKat extends StatelessWidget {
       },
       child: Card(
         child: Container(
-          width: (MediaQuery.of(context).size.width / 3.2),
-          height: (MediaQuery.of(context).size.height / 4.3),
+          width: (MediaQuery.of(context).size.width / 3.32),
+          height: (MediaQuery.of(context).size.height / 4.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[

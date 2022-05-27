@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart'; //slider banner için
+import 'package:flutter_makbul1/arasayfa.dart';
 import 'package:flutter_makbul1/cardKategori.dart'; //card düzeni tek sayfadan düzenlenebilsin
 import 'package:flutter_makbul1/sepet.dart';
 import 'dart:convert'; //json decode
@@ -26,8 +27,12 @@ class _Anasayfa extends State<Anasayfa> {
   DbController dbController = DbController(); //Kullanacağımız veritabanı işle..
   //List<String> cartItems = [];
   List<DbCart> cartItemList = [];
+  List<String> productList = [];
   //int urunMiktar = 0;
   double toplamTutar = 0;
+  late String prodQuantity;
+  late String productName;
+  late String productPrice;
 
   //final Future<SharedPreferences> _sharedP = SharedPreferences.getInstance();
 
@@ -109,9 +114,9 @@ class _Anasayfa extends State<Anasayfa> {
         return AlertDialog(
           titlePadding: const EdgeInsets.all(0),
           title: Container(
-            padding: EdgeInsets.all(9.0),
+            padding: const EdgeInsets.all(9.0),
             color: Colors.green,
-            child: Text(
+            child: const Text(
               "Sepetim",
               style: TextStyle(
                 color: Colors.white,
@@ -128,18 +133,18 @@ class _Anasayfa extends State<Anasayfa> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           Text(
-                            "${cartItemList[i].prodName} : ",
-                            style: TextStyle(
+                            "${productName = cartItemList[i].prodName} : ",
+                            style: const TextStyle(
                               //color: Color.fromRGBO(103, 148, 105, 1.0),
                               color: Colors.amber,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           Text(
-                            "${cartItemList[i].prodQuantity} kg",
+                            "${prodQuantity = cartItemList[i].prodQuantity} kg",
                           ),
                           Text(
-                            "${cartItemList[i].prodPrice} TL",
+                            "${productPrice = cartItemList[i].prodPrice} TL",
                           ),
                           Text(
                             "${double.parse(cartItemList[i].prodPrice) * double.parse(cartItemList[i].prodQuantity)} TL",
@@ -151,7 +156,7 @@ class _Anasayfa extends State<Anasayfa> {
                           */
                         ],
                       ),
-                    Divider(),
+                    const Divider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
@@ -180,7 +185,7 @@ class _Anasayfa extends State<Anasayfa> {
                 //Devam işlemler -> checkout
                 Navigator.pop(context);
               },
-              child: Text('AlışVerişe Devam'),
+              child: const Text('AlışVerişe Devam'),
             ),
             ElevatedButton(
               style: ButtonStyle(
@@ -193,7 +198,11 @@ class _Anasayfa extends State<Anasayfa> {
 
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Sepet()),
+                  MaterialPageRoute(
+                    builder: (context) => Sepet(
+                      cartItemList: cartItemList,
+                    ),
+                  ),
                 );
               },
               child: Text('ÖDEME'),

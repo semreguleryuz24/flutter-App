@@ -45,7 +45,7 @@ class _IlkSayfaState extends State<IlkSayfa> {
               subkatSAYI: 0,
             ),
         "/arasayfa": (context) => AraSayfa(),
-        "/sepet": (context) => Sepet()
+        //"/sepet": (context) => Sepet(cartItemList: [],)
       },
     );
   }
